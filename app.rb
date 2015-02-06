@@ -1,8 +1,12 @@
 require "sinatra"
 require "omniauth/amazon"
 
-use Rack::Session::Cookie, secret: ENV['SECRET']
+configure :production do
+  require "rack/ssl-enforcer"
+  use Rack::SslEnforcer
+end
 
+use Rack::Session::Cookie, secret: ENV['SECRET']
 use OmniAuth::Builder do
   provider :amazon, ENV["AMAZON_CLIENT_ID"], ENV["AMAZON_CLIENT_SECRET"]
 end
@@ -10,7 +14,7 @@ end
 get "/" do
   <<-HTML
   <a href="/auth/amazon">
-    <img src="//g-ecx.images-amazon.com/images/G/01/lwa/btnLWA_drkgry_156x32.png">
+    <img src="https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_drkgry_156x32.png">
   </a>
   HTML
 end
