@@ -9,6 +9,7 @@ GEM
     faraday-net_http (3.0.2)
     hashie (5.0.0)
     jwt (2.7.1)
+    multi_json (1.15.0)
     multi_xml (0.6.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
@@ -51,6 +52,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  multi_json
   omniauth-amazon
   puma
   rack-ssl-enforcer
