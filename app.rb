@@ -13,8 +13,10 @@ end
 
 get "/" do
   <<-HTML
-  <a href="/auth/amazon">
-    <img src="https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_drkgry_156x32.png">
+  <a id="LoginWithAmazon" href="/auth/amazon">
+    <img border="0" alt="Login with Amazon"
+      src="http://g-ecx.images-amazon.com/images/G/01/lwa/btnLWA_gold_312x64.png"
+      width="156" height="32" />
   </a>
   HTML
 end
