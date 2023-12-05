@@ -24,11 +24,15 @@ end
 get '/auth/amazon/callback' do
   auth = request.env['omniauth.auth']
   <<-HTML
+  <a href="/">Back</a>
   <ul>
     <li>uid: #{auth.uid}</li>
     <li>email: #{auth.info.email}</li>
     <li>name: #{auth.info.name}</li>
     <li>postal_code: #{auth.extra.postal_code}</li>
+    <li>access_token: #{auth.credentials.token}</li>
+    <li>refresh_token: #{auth.credentials.refresh_token}</li>
+    <li>expires_at: #{Time.at(auth.credentials.expires_at)}</li>
   </ul>
   HTML
 end
