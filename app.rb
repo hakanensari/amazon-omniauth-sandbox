@@ -8,7 +8,7 @@ end
 
 use Rack::Session::Cookie, secret: ENV['SECRET']
 use OmniAuth::Builder do
-  provider :amazon, ENV["AMAZON_CLIENT_ID"], ENV["AMAZON_CLIENT_SECRET"]
+  provider :amazon, ENV["AMAZON_CLIENT_ID"], ENV["AMAZON_CLIENT_SECRET"], scope: "profile postal_code"
 end
 
 get "/" do
