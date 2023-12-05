@@ -54,6 +54,7 @@ DEPENDENCIES
   multi_json
   omniauth-amazon
   puma
+  rack-protection
   sinatra
 
 RUBY VERSION
