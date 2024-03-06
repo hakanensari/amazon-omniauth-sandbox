@@ -19,6 +19,20 @@ get "/" do
     </a>
     <input type="hidden" name="authenticity_token" value="#{env["rack.session"][:csrf]}" />
   </form>
+  <a href="/privacy">Privacy notice</a>
+  HTML
+end
+
+get "/privacy" do
+  <<-HTML
+  <a href="/">Back</a>
+  <h1>Privacy Notice</h1>
+  <p>
+    We temporarily access your Amazon profile name, email, and postal code.
+    This is solely to demo the login's functionality.
+    We do not collect or share data.
+  </p>
+  <p><a href="https://www.github.com/hakanensari/amazon-omniauth-sandbox">Contact here</a> for further details.
   HTML
 end
 
